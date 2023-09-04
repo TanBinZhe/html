@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .input_field{
+            margin-bottom: 5px;
+        }
+        .container{
+            background-color: #ffffff;
+            border-radius: 0px;
+            padding: 20px;
+            padding-top: 0px;
+            padding-bottom: 10px;
+            margin-left: 20%;
+            margin-right: 20%;
+            text-align: left;
+        }
+        header{
+            margin-left: 15%;
+        }
+        button{
+            border-radius: 0%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<main>
+    <header>
+        <div style="display: flex;align-items: center;">
+            <img src="Untitled.png" alt="" width="40px" height="60px" style="margin-right: 5%;">
+            <h1>Interbank Transfer</h1>
+        </div>
+        
+    </header>
+    <body>
+        <div class="container">
+            <form action="#" class="form" id="myForm">
+                <div class="input_field">
+                    <label for="RecipentBank" style="margin-right: 50px;">1. Recipient Bank :</label>
+                    <select name="RecipentBank" id="RecipentBank">
+                      <option value="Ambank">Ambank</option>
+                      <option value="Bank Rakyat">Bank Rakyat</option>
+                      <option value="CIMB">CIMB</option>
+                      <option value="ICBC">ICBC</option>
+                      <option value="Maybank">MayBank</option>
+                      <option value="Public Bank">Public bank</option>
+                    </select>
+                </div>
+    
+                <div class="input_field">
+                    <label for="acc_num" style="margin-right: 39px;">2. Account Number :</label>
+                    <input type="text" name="acc_num" id="acc_num">
+                </div>
+    
+                <div class="input_field">
+                    <label for="beneficiary" style="margin-right: 74px;">3. Beneficiary :</label>
+                    <input type="text" name="beneficiary" id="beneficiary">
+                </div>
+    
+                <div class="input_field">
+                    <label for="transfer_amount" style="margin-right: 43px;">4. Transfer amount :</label>
+                    <input type="text" name="transfer_amount" id="transfer_amount">
+                </div>          
+                <div class="input_field">
+                    <label for="details" style="margin-right: 28px;">5. References Details :</label>
+                    <input type="text" name="details" id="details">
+                    <div style="padding-left: 200px;">
+                </div>
+                <div style="margin-left: 190px;margin-top: 10px;">
+                  <button>Reset</button>
+                  <button>Cancel</button>
+                  <button type="button" id="submitButton">Next</button>
+                </div>
+              </form>
+        </div>
+        
+          
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('myForm');
+  const submitButton = document.getElementById('submitButton');
+
+  submitButton.addEventListener('click', function() {
+    const formData = new FormData(form);
+
+    // Convert FormData to a JSON object
+    const formDataObject = {};
+    formData.forEach((value, key) => {
+      formDataObject[key] = value;
+    });
+
+    // Store the form data in sessionStorage
+    sessionStorage.setItem('formData', JSON.stringify(formDataObject));
+
+   
+    window.location.replace("page4.html");
+
+    });
+    });
+
+        </script>
+
+    </body>
+</main>
+
+</html>

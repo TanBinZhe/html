@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page4</title>
+    <style>
+        ul li{
+            display: inline;
+            border: #007bff 1px dashed;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: grey;
+
+        }
+
+.alert-container {
+  background-color: #ffffff;
+  border-radius: 0px;
+  padding: 20px;
+  padding-top: 0px;
+  padding-bottom: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.button{
+    background-color: #ffffff;
+  border-radius: 0px;
+  padding: 0px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center; 
+
+}
+
+th{ 
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: black 1px solid; 
+    cursor: pointer;
+}
+
+.alert-header {
+  display: flex;
+  align-items: center;
+  padding-right: 0px;
+  justify-content: left;
+  margin-bottom: 0px;
+}
+
+.alert-header img {
+  margin-right: 10px;
+}
+
+.alert-message {
+  margin-bottom: 20px;
+}
+
+.alert-actions {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+}
+
+.alert-actions li {
+  margin: 0 10px;
+}
+
+.alert-actions a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.alert-actions a:hover {
+  text-decoration: underline;
+}
+
+    </style>
+</head>
+<body>
+    <header></header>
+    <main>
+      <div class="alert-container" style="border: black 1px solid;">
+        <div class="alert-header">
+          <img src="alert.png" alt="" width="20px" height="20px">
+          <h3>Alert</h3>
+        </div>
+        <div class="alert-message">
+          You have added a new beneficiary for the first time <br>this year. 
+           Please review the beneficiary details 
+           <br>carefully before confirming the transaction.
+        </div>
+      </div>
+      <div class="button">
+        <table style="width: 100%;   border-collapse: collapse;">
+            <tr>
+                <th id="cancel">Cancel</th>
+                <th id="proceed">Proceed</th>
+            </tr>
+        </table>
+    </div>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        const header1 = document.getElementById('cancel');
+        const header2 = document.getElementById('proceed');
+
+        header1.addEventListener('click', function() {
+            window.location.replace("page3.html");
+            // Add your desired action for Header 1 click
+        });
+
+        header2.addEventListener('click', function() {
+            window.location.replace("page5.html");
+            // Add your desired action for Header 2 click
+        });
+        });
+    </script>
+</body>
+  
+</html>

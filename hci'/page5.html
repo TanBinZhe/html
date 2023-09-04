@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page5</title>
+    <style>
+        .constrainer{
+            margin: 10%;
+            margin-left: 15%;
+            text-align: left;
+        }
+        body {
+  font-family: monospace;
+}
+    button{
+      border-radius: 0%;
+      cursor: pointer;
+      padding: 5px;
+    }
+    </style>
+</head>
+<body>
+    <div class="constrainer">
+        <h1>Confirm Payment</h1>
+        <div id="userDetails"></div>
+        <button>Back</button>
+        <button style="margin-left: 48%;">Confirm</button>
+    </div>
+    
+    
+    <script>
+      // Retrieve stored form data from sessionStorage
+      const storedFormData = sessionStorage.getItem('formData');
+      
+      if (storedFormData) {
+        const formDataObject = JSON.parse(storedFormData);
+        const userDetailsDiv = document.getElementById('userDetails');
+  
+        // Display user details in the userDetailsDiv
+        userDetailsDiv.innerHTML = `
+          <p><strong>Recipient Bank&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;:</strong> ${formDataObject.RecipentBank}</p>
+          <p><strong>Account Number&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;:</strong> ${formDataObject.acc_num}</p>
+          <p><strong>Beneficiary&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&emsp;&emsp;&emsp;:</strong> ${formDataObject.beneficiary}</p>
+          <p><strong>Transfer Amount&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;&emsp;&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;:</strong> ${formDataObject.transfer_amount}</p>
+          <p><strong>References or other details&emsp;&nbsp;&nbsp;&nbsp;&emsp;&emsp;:</strong> ${formDataObject.details}</p>
+        `;
+      } else {
+        document.getElementById('userDetails').textContent = 'No user details found.';
+      }
+    </script>
+  </body>
+</html>
